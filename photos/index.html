@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="摄影系列与日常观看。">
+    <title>Photos｜你的名字</title>
+    <link rel="stylesheet" href="../css/style.css">
+  </head>
+  <body>
+    <nav class="site-nav" aria-label="栏目导航">
+      <a href="../">Home</a>
+      <a class="is-active" href="./">Photo</a>
+      <a href="../writing/">Writing</a>
+    </nav>
+
+    <main class="page-shell">
+      <section class="page-main">
+        <div class="album-index" id="albumIndex">
+          <div class="album-list" id="albumList"></div>
+        </div>
+
+        <div class="album-detail" id="albumDetail" hidden>
+          <div class="album-toolbar">
+            <h1 class="album-title" id="albumTitle"></h1>
+            <button class="album-back" id="albumBack" type="button">all series</button>
+          </div>
+          <div class="photo-grid" id="photoGrid"></div>
+        </div>
+      </section>
+    </main>
+
+    <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="照片预览">
+      <button class="lightbox-close" id="lightboxClose" type="button" aria-label="关闭">×</button>
+      <button class="lightbox-arrow prev" id="lightboxPrev" type="button" aria-label="上一张">‹</button>
+      <div class="lightbox-media" id="lightboxMedia"></div>
+      <button class="lightbox-arrow next" id="lightboxNext" type="button" aria-label="下一张">›</button>
+      <span class="lightbox-label" id="lightboxLabel"></span>
+    </div>
+
+    <script src="./albums.js"></script>
+    <script src="./gallery.js"></script>
+  </body>
+</html>

@@ -1,0 +1,510 @@
+:root {
+  --bg: #fff;
+  --text: #101010;
+  --muted: #777;
+  --line: #ececec;
+  --nav-width: 120px;
+  --nav-gap: 56px;
+  --space-top: 72px;
+  --space-left: 76px;
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: var(--bg);
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "SFMono-Regular", "Cascadia Mono", "Noto Sans Mono CJK SC", Consolas, monospace;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: 4px;
+}
+
+/* Landing page */
+.landing {
+  min-height: 100svh;
+  padding: 88px 0 48px 88px;
+  font-family: "American Typewriter", "Courier New", Courier, monospace;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.landing-image {
+  width: 180px;
+  height: 132px;
+  margin-bottom: 22px;
+  overflow: hidden;
+  background: #eee9df;
+}
+
+.landing-image img {
+  display: block;
+  width: 430px;
+  height: 132px;
+  max-width: none;
+  object-fit: cover;
+  object-position: left center;
+}
+
+.landing-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.landing-nav a {
+  display: inline-block;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+
+.landing-nav a:hover {
+  text-decoration: underline;
+}
+
+/* Shared inner-page layout */
+.site-nav {
+  position: fixed;
+  z-index: 30;
+  top: var(--space-top);
+  left: var(--space-left);
+  display: flex;
+  width: var(--nav-width);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.site-nav a {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.site-nav a:hover,
+.site-nav a.is-active {
+  color: var(--text);
+}
+
+.page-shell {
+  min-height: 100svh;
+  padding: var(--space-top) 0 116px var(--space-left);
+}
+
+.page-main {
+  width: min(660px, calc(100vw - var(--space-left) - var(--nav-width) - var(--nav-gap) - 28px));
+  margin-left: calc(var(--nav-width) + var(--nav-gap));
+}
+
+.page-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.4;
+}
+
+.page-subtitle,
+.empty-state {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+/* Writing */
+.post-list {
+  display: flex;
+  margin-top: 26px;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.post-row {
+  display: grid;
+  grid-template-columns: 58px 1fr;
+  gap: 12px;
+  align-items: baseline;
+}
+
+.post-date {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 300;
+  line-height: 1.45;
+}
+
+.post-link {
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.45;
+  text-decoration: none;
+  transition: opacity 180ms ease;
+}
+
+.post-link:hover {
+  opacity: 0.62;
+}
+
+.article-view[hidden],
+.post-index[hidden] {
+  display: none;
+}
+
+.article-back {
+  display: inline-block;
+  margin-bottom: 34px;
+  color: var(--muted);
+  font-size: 11px;
+  text-decoration: none;
+}
+
+.article-back:hover {
+  color: var(--text);
+}
+
+.article-title {
+  max-width: 620px;
+  margin: 0;
+  font-family: "Songti SC", STSong, "Noto Serif CJK SC", serif;
+  font-size: clamp(24px, 4vw, 34px);
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.article-meta {
+  margin: 12px 0 42px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.article-content {
+  max-width: 620px;
+  color: #242424;
+  font-family: "Songti SC", STSong, "Noto Serif CJK SC", serif;
+  font-size: 16px;
+  line-height: 2;
+}
+
+.article-content p {
+  margin: 0 0 1.4em;
+}
+
+/* Photography */
+.album-list {
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+}
+
+.album-card {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+
+.album-cover,
+.photo-frame,
+.lightbox-media {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background: #ddd;
+}
+
+.album-cover img,
+.photo-frame img,
+.lightbox-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.album-cover {
+  transition: opacity 220ms ease;
+}
+
+.album-card:hover .album-cover {
+  opacity: 0.9;
+}
+
+.album-caption {
+  display: block;
+  min-height: 1.25em;
+  margin-top: 8px;
+  overflow: hidden;
+  color: #8a8a8a;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.25;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.placeholder-sea {
+  background:
+    linear-gradient(180deg, rgba(235, 239, 238, 0.12), rgba(60, 75, 82, 0.16)),
+    linear-gradient(172deg, #d8dcda 0 47%, #8d9a9a 48% 60%, #42535b 61% 100%);
+}
+
+.placeholder-night {
+  background:
+    radial-gradient(circle at 72% 32%, #f7edd4 0 1.8%, transparent 2.1%),
+    linear-gradient(122deg, transparent 0 46%, rgba(232, 231, 215, 0.2) 47% 48%, transparent 49%),
+    linear-gradient(160deg, #101820 0 56%, #273130 57% 100%);
+}
+
+.placeholder-mountain {
+  background:
+    linear-gradient(153deg, transparent 0 48%, rgba(24, 35, 27, 0.65) 49% 100%),
+    linear-gradient(24deg, #bdc0b4 0 38%, #6f7868 39% 62%, #263328 63% 100%);
+}
+
+.album-detail[hidden],
+.album-index[hidden] {
+  display: none;
+}
+
+.album-toolbar {
+  display: flex;
+  margin-bottom: 24px;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.album-title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.album-back {
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 11px;
+}
+
+.photo-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.photo-button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+
+.photo-caption {
+  display: block;
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: 11px;
+  text-align: right;
+}
+
+.lightbox {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 42px 80px;
+  background: rgba(8, 8, 8, 0.97);
+}
+
+.lightbox[hidden] {
+  display: none;
+}
+
+.lightbox-media {
+  width: min(1000px, 82vw);
+  max-height: 86vh;
+  aspect-ratio: 3 / 2;
+}
+
+.lightbox-close,
+.lightbox-arrow {
+  position: absolute;
+  border: 0;
+  background: transparent;
+  color: #f3f3f3;
+  cursor: pointer;
+}
+
+.lightbox-close {
+  top: 22px;
+  right: 24px;
+  width: 34px;
+  height: 34px;
+  font-size: 24px;
+  font-weight: 200;
+}
+
+.lightbox-arrow {
+  top: 50%;
+  width: 52px;
+  height: 52px;
+  transform: translateY(-50%);
+  font-size: 30px;
+  font-weight: 200;
+}
+
+.lightbox-arrow.prev {
+  left: 20px;
+}
+
+.lightbox-arrow.next {
+  right: 20px;
+}
+
+.lightbox-label {
+  position: absolute;
+  right: 24px;
+  bottom: 20px;
+  color: #aaa;
+  font-size: 11px;
+}
+
+@media (max-width: 980px) {
+  :root {
+    --space-top: 56px;
+    --space-left: 36px;
+    --nav-width: 96px;
+    --nav-gap: 30px;
+  }
+
+  .page-main {
+    width: min(460px, calc(100vw - 190px));
+  }
+
+  .album-list {
+    gap: 48px;
+  }
+}
+
+@media (max-width: 720px) {
+  .landing {
+    padding: 36px 0 36px 36px;
+  }
+
+  .site-nav {
+    position: fixed;
+    inset: 0 0 auto;
+    width: 100%;
+    padding: calc(env(safe-area-inset-top) + 10px) 14px 10px;
+    flex-direction: row;
+    gap: 14px;
+    background: var(--bg);
+  }
+
+  .site-nav a {
+    white-space: nowrap;
+  }
+
+  .page-shell {
+    padding: calc(env(safe-area-inset-top) + 48px) 14px 54px;
+  }
+
+  .page-main {
+    width: auto;
+    margin-left: 0;
+  }
+
+  .post-list {
+    margin-top: 32px;
+    gap: 14px;
+  }
+
+  .post-row {
+    grid-template-columns: 52px 1fr;
+    gap: 10px;
+  }
+
+  .album-list {
+    gap: 30px;
+  }
+
+  .lightbox {
+    padding: 50px 14px;
+  }
+
+  .lightbox-media {
+    width: 100%;
+  }
+
+  .lightbox-arrow {
+    display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .site-nav {
+    gap: 12px;
+    padding-inline: 10px;
+  }
+
+  .site-nav a,
+  .post-link,
+  .album-caption {
+    font-size: 11px;
+  }
+
+  .post-date {
+    font-size: 10px;
+  }
+
+  .post-row {
+    grid-template-columns: 48px 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
