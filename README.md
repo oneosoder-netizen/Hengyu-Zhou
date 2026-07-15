@@ -9,7 +9,7 @@
 - `writing/`：写作列表和文章阅读
 - `assets/`：首页图片以及你的摄影文件
 - `css/style.css`：全站样式
-- `.github/workflows/pages.yml`：自动发布到 GitHub Pages
+- `.nojekyll`：让 GitHub Pages 直接发布纯静态文件
 
 ## 第一次替换内容
 
@@ -49,8 +49,9 @@
 
 1. 在 GitHub 创建名为 `你的用户名.github.io` 的公开仓库。
 2. 把本目录的所有文件上传到仓库根目录。
-3. 打开仓库 `Settings → Pages`，将 Source 选择为 `GitHub Actions`。
-4. 等待 Actions 完成，网站地址就是 `https://你的用户名.github.io/`。
+3. 打开仓库 `Settings → Pages`，将 Source 选择为 `Deploy from a branch`。
+4. Branch 选择 `main`，目录选择 `/ (root)`，然后保存。
+5. 等待发布完成，网站地址就是 `https://你的用户名.github.io/仓库名/`。
 
 ## 图片建议
 
