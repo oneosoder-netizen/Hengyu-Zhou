@@ -22,7 +22,7 @@
 
   function mediaMarkup(media, className) {
     if (media && media.src) {
-      return `<span class="${className}"><img src="${escapeHtml(media.src)}" alt="" loading="lazy"></span>`;
+      return `<span class="${className}"><img src="${escapeHtml(media.src)}" alt="" loading="lazy" decoding="async"></span>`;
     }
     const placeholder = media && media.placeholder ? media.placeholder : "placeholder-sea";
     return `<span class="${className} ${escapeHtml(placeholder)}" aria-hidden="true"></span>`;

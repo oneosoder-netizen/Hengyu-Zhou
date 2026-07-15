@@ -33,7 +33,7 @@
     const post = posts.find((item) => item.slug === slug);
     if (!post) return false;
 
-    document.title = `${post.title}｜你的名字`;
+    document.title = `${post.title}｜enshrouding-Hengyu Zhou`;
     document.getElementById("articleTitle").textContent = post.title;
     document.getElementById("articleMeta").textContent = post.date || "";
     document.getElementById("articleContent").innerHTML = (post.paragraphs || [])

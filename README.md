@@ -13,10 +13,7 @@
 
 ## 第一次替换内容
 
-1. 在所有 HTML 和 JS 文件中，把“你的名字”替换为你的真实名字。
-2. 用自己的首页图片替换 `assets/home-visual.png`。
-3. 删除 `photos/albums.js` 里的示例系列，换成自己的相册。
-4. 删除 `writing/posts.js` 里的示例文章，换成自己的文字。
+当前网站名称为 `enshrouding-Hengyu Zhou`，首页图片和首批七个摄影系列已经完成配置。Writing 暂时保留示例文章。
 
 ## 发布新照片
 
@@ -24,7 +21,7 @@
 
 1. 新建目录 `assets/photos/nanjing/`。
 2. 上传照片，例如 `01.jpg`、`02.jpg`、`03.jpg`。
-3. 打开 `photos/albums.js`，增加：
+3. 将照片转换成适合网页的 JPG 后，打开 `photos/albums.js` 增加相册配置。
 
 ```js
 {
